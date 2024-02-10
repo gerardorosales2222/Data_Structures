@@ -24,7 +24,7 @@ int main(){
 	Nodo *pila = NULL;
 	do{
 		push(pila);
-		printf("\n0 - Salir ");
+		printf("\n0 - Salir\nOpcion: ");
 		scanf("%d", &op);
 	}while(op!=0);
 	mostrar(pila);
@@ -37,7 +37,7 @@ void mostrar(Nodo *&pila){
 		Nodo *aux = pila;
 		u = aux->dato;
 		printf("\n %s-", u.userName);
-		printf(" %s-", u.pass);
+		printf(" %s- ", u.pass);
 		printf(" %s", u.apeNom);
 		pila = aux->siguiente;
 	}
