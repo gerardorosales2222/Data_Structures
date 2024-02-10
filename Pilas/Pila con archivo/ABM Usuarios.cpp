@@ -31,13 +31,13 @@ int main(){
 	do{
 		system("CLS");
 		system("COLOR 0E");
-		printf("\n --------------------MENU-------------------- ");
-		printf("\n 1 - Cargar Pila desde archivo ");
-		printf("\n 2 - Guardar Pila en archivo ");
-		printf("\n 3 - Agregar elemento(nodo) a la pila ");
-		printf("\n 4 - Borrar un elemento(nodo) de la pila ");
-		printf("\n 5 - Mostrar los elementos de la pila \n");
-		printf("\n 0 - Salir \n\n Opci%cn: ",162);
+		printf("\n		--------------------MENU-------------------- ");
+		printf("\n		1 - Cargar Pila desde archivo ");
+		printf("\n		2 - Guardar Pila en archivo ");
+		printf("\n		3 - Agregar elemento(nodo) a la pila ");
+		printf("\n		4 - Borrar un elemento(nodo) de la pila ");
+		printf("\n		5 - Mostrar los elementos de la pila \n");
+		printf("\n		0 - Salir \n\n		Opci%cn: ",162);
 		scanf("%d", &op);
 		switch(op){
 			case 1:
@@ -51,7 +51,7 @@ int main(){
 			case 3:
 				system("CLS");
 				push(pila);
-				printf("\nElemento en la pila...\n");
+				printf("\n\n\n\n\n\n\n\nElemento en la pila...\n");
 				system("PAUSE");
 				break;
 			case 4:
@@ -63,11 +63,11 @@ int main(){
 			case 5:
 				system("CLS");
 				mostrar(pila);
-				printf("\n");
+				printf("\n\n\n");
 				system("PAUSE");
 				break;
 			case 0:
-				printf("\n Saliendo...\n");
+				printf("\n Saliendo...");
 				break;
 			default:
 				printf("Opcion incorrecta. ");
