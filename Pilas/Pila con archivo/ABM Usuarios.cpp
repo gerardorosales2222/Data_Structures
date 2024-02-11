@@ -19,6 +19,7 @@ void mostrar(Nodo *pila);
 
 
 void guardarPila(Nodo *pila, FILE *archivo);
+void abrirPila(Nodo *&pila);
 
 Usuario cargarUsuario();
 
@@ -28,6 +29,7 @@ int main(){
 	
 	int op;
 	Nodo *pila = NULL;
+	system("TITLE PILAS");
 	do{
 		system("CLS");
 		system("COLOR 0E");
@@ -42,11 +44,14 @@ int main(){
 		switch(op){
 			case 1:
 				archivo = fopen("Usuarios.dat","rb");
+				abrirPila(pila);
 				break;
 			case 2:
 				archivo = fopen("Usuarios.dat","wb");
 				guardarPila(pila, archivo);
 				fclose(archivo);
+				printf("\nPila guardada...\n");
+				system("PAUSE");
 				break;
 			case 3:
 				system("CLS");
@@ -129,4 +134,15 @@ void guardarPila(Nodo *pila, FILE *archivo){
 		printf(" %s ", u.apeNom);
 		pila = aux->siguiente;
 	}
+}
+
+void abrirPila(Nodo *&pila){
+	Usuario u;
+	while(!feof(archivo)){
+    	fread(&u, sizeof(Usuario), 1, archivo);
+    	Nodo *nuevo_nodo = new Nodo();
+    	nuevo_nodo->dato = u;
+    	nuevo_nodo->siguiente = pila;
+    	pila = nuevo_nodo;
+    }
 }
