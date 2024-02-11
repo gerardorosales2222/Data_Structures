@@ -15,10 +15,10 @@ struct Nodo{
 
 void push(Nodo *&pila);
 void pop(Nodo *&pila);
-void mostrar(Nodo *&pila);
+void mostrar(Nodo *pila);
 
 
-void guardarPila(Nodo *&pila, FILE *archivo);
+void guardarPila(Nodo *pila, FILE *archivo);
 
 Usuario cargarUsuario();
 
@@ -77,7 +77,7 @@ int main(){
 }
 
 //CÓDIGO DE PILA
-void mostrar(Nodo *&pila){
+void mostrar(Nodo *pila){
 	Usuario u;
 	while(pila != NULL){
 		Nodo *aux = pila;
@@ -99,7 +99,7 @@ void push(Nodo *&pila){
 void pop(Nodo *&pila){
 	Nodo *aux = pila;
 	pila = aux->siguiente;
-	delete aux;
+	delete(aux);
 }
 
 Usuario cargarUsuario(){
@@ -118,7 +118,7 @@ Usuario cargarUsuario(){
 }
 
 //CÓDIGO PARA ARCHIVO
-void guardarPila(Nodo *&pila, FILE *archivo){
+void guardarPila(Nodo *pila, FILE *archivo){
 	Usuario u;
 	while(pila != NULL){
 		Nodo *aux = pila;
