@@ -51,7 +51,7 @@ int main(){
 			case 3:
 				system("CLS");
 				push(pila);
-				printf("\n\n\n\n\n\n\n\nElemento en la pila...\n");
+				printf("\n\n\n\n\n\n\n\n\n\n\nElemento en la pila...\n");
 				system("PAUSE");
 				break;
 			case 4:
@@ -97,9 +97,7 @@ void push(Nodo *&pila){
 }
 
 void pop(Nodo *&pila){
-	Usuario u;
 	Nodo *aux = pila;
-	u = aux->dato;
 	pila = aux->siguiente;
 	delete aux;
 }
