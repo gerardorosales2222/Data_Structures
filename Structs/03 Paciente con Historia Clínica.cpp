@@ -3,7 +3,7 @@
 #include<string.h>
 
 typedef struct{
-	int cod;
+	int indice;
 	char descrip[100];
 }HistoriaClinica;
 
@@ -64,8 +64,8 @@ void cargarPaciente(Paciente &pac){
 }
 
 void cargarHistoriaClinica(Paciente &pac){
-	int bytes = sizeof(pac.HC);//bytes que ocupa un elemento del vector HC
-	int cantElementos = bytes / sizeof(pac);
+	int bytes = sizeof(pac.HC[0]);//bytes que ocupa un elemento del vector HC
+	int cantElementos = bytes / sizeof(pac.HC);
 	printf("Long: %d \n\n\n",cantElementos);
 	pac.HC[0].cod = cantElementos+1;
 	_flushall();
@@ -73,7 +73,7 @@ void cargarHistoriaClinica(Paciente &pac){
     gets(pac.HC[cantElementos].descrip);
     printf("Cargado: %s \n", pac.HC[cantElementos].descrip);
     bytes = sizeof(pac.HC);//bytes que ocupa un elemento del vector HC
-	cantElementos = bytes / sizeof(pac);
+	cantElementos = bytes / sizeof(pac.HC);
 	printf("Long: %d \n",cantElementos);
     system("pause");
 }
